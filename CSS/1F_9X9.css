@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", sans-serif;
+    /*title-wrap上面原本有一塊空白的原因：第一個div的內文底線，對齊第二個沒有內文的div的框底*/
+    /*解決辦法：改變vertical-align*/
+    vertical-align: bottom;
+}
+
+body {
+    background-color: #F0F0F0;
+    /*需要對整個版面設定寬度 1280px，縮小瀏覽器時，版面就不會跑掉*/
+    width: 1280px;
+}
+
+.content {
+    padding: 80px 85px;
+}
+
+.title-wrap {
+    width: 345.5px;
+    height: 366px;
+    display: inline-block;
+    padding: 18px 0px;
+    margin: 20px 0px;
+    position: relative;
+    left: 35px;
+}
+
+#title {
+    width: 280px;
+    height: 330px;
+    color: #2EB738;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    width: 280px;
+    border-bottom: 1px solid #2EB738;
+    /*注意！！此元素是 :before, :after 元素的上層元素*/
+    /*注意！！此元素可以是 :before, :after 元素的relative*/
+    position: relative;
+}
+
+.line:before {
+    content: "x";
+    color: #2EB738;
+    position: absolute;
+    top: -10px;
+    left: -30px;
+}
+
+.line:after {
+    content: "x";
+    color: #2EB738;
+    position: absolute;
+    top: -10px;
+    right: -30px;
+}
+
+#title > #ch-title {
+    font-family: "PingFang TC";
+    font-size: 56px;
+    font-weight: 500;
+    flex: none;
+}
+
+#title > #en-title {
+    font-family: "PingFang TC";
+    font-size: 23px;
+    letter-spacing: 0.5px;
+    flex: none;
+}
+
+.chart {
+    width: 350px;
+    height: 366px;
+    background-color: white;
+    border-radius: 100px 0px 30px 0px;
+    box-shadow: 0px 3px 10px #D8D8D8;
+    display: inline-block;
+    margin: 20px 0px;
+    position: relative;
+}
+
+.chart:nth-child(3n+1) {
+    /*background-color: yellow;*/
+}
+
+.chart:nth-child(3n+2) {
+    /*background-color: pink;*/
+    margin: 20px 30px;
+}
+
+.chart:nth-child(3n) {
+    /*background-color: blue;*/
+}
+
+.divpattern {
+    display: inline-block;
+}
+
+.left {
+    position: absolute;
+    left: 43px;
+    bottom: 52px;
+}
+
+.right {
+    position: absolute;
+    right: 43px;
+    bottom: 52px;
+}
+
+.mainNum {
+    width: 71px;
+    color: #2EB738;
+    font-size: 128px;
+    font-weight: bold;
+    text-shadow: 4px 3px 0px #F0F0F0;
+    position: absolute;
+    top: 30px;
+    left: 55px;
+}
+
+.equation {
+    color: #2EB738;
+    font-size: 24px;
+    line-height: 33px;
+    margin: 8px auto 8px 0px;
+}
+
+footer {
+    background-color: #2EB738;
+    font-size: 16px;
+    text-align: right;
+    color: #F0F0F0;
+    padding: 8px 85px 8px 40px;
+}
